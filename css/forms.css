@@ -1,0 +1,424 @@
+/* ==========================================================
+   FORMULÁRIOS
+========================================================== */
+
+.form-container{
+
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+
+}
+
+/* ==========================================================
+   SEÇÕES
+========================================================== */
+
+.form-section{
+
+    background:#FFFFFF;
+
+    border:1px solid #E2E2E2;
+
+    border-radius:8px;
+
+    padding:24px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+
+}
+
+.form-section h3{
+
+    color:#07539C;
+
+    margin-bottom:20px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #07539C;
+
+    font-size:20px;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.form-grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.form-grid-4{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+.full{
+
+    grid-column:1/-1;
+
+}
+
+/* ==========================================================
+   CAMPOS
+========================================================== */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    min-height:42px;
+
+    border:1px solid #D8D8D8;
+
+    border-radius:6px;
+
+    padding:10px 12px;
+
+    font-size:14px;
+
+    transition:.2s;
+
+    background:#FFF;
+
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:90px;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:#07539C;
+
+    box-shadow:0 0 4px rgba(7,83,156,.3);
+
+}
+
+/* ==========================================================
+   CAMPOS SOMENTE LEITURA
+========================================================== */
+
+.readonly{
+
+    background:#F2F2F2 !important;
+
+    color:#666;
+
+    cursor:not-allowed;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   CAMPOS OBRIGATÓRIOS
+========================================================== */
+
+.required::after{
+
+    content:" *";
+
+    color:#D32F2F;
+
+}
+
+.invalid{
+
+    border-color:#D32F2F !important;
+
+    background:#FFF5F5;
+
+}
+
+.valid{
+
+    border-color:#2E7D32 !important;
+
+}
+
+/* ==========================================================
+   CHECKBOXES
+========================================================== */
+
+.checkbox-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    min-height:42px;
+
+}
+
+.checkbox-group input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+/* ==========================================================
+   BOTÕES
+========================================================== */
+
+.form-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+.btn-primary{
+
+    background:#07539C;
+
+    color:#FFF;
+
+    min-width:140px;
+
+}
+
+.btn-primary:hover{
+
+    background:#043D72;
+
+}
+
+.btn-secondary{
+
+    background:#909090;
+
+    color:#FFF;
+
+    min-width:120px;
+
+}
+
+.btn-secondary:hover{
+
+    background:#707070;
+
+}
+
+.btn-success{
+
+    background:#2E7D32;
+
+    color:#FFF;
+
+}
+
+.btn-success:hover{
+
+    background:#256628;
+
+}
+
+.btn-danger{
+
+    background:#D32F2F;
+
+    color:#FFF;
+
+}
+
+.btn-danger:hover{
+
+    background:#B71C1C;
+
+}
+
+/* ==========================================================
+   MENSAGENS
+========================================================== */
+
+.alert{
+
+    padding:15px;
+
+    border-radius:6px;
+
+    margin-bottom:20px;
+
+    display:none;
+
+}
+
+.alert-success{
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+    border-left:5px solid #2E7D32;
+
+}
+
+.alert-error{
+
+    background:#FDECEC;
+
+    color:#D32F2F;
+
+    border-left:5px solid #D32F2F;
+
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+    display:none;
+
+}
+
+.spinner{
+
+    width:55px;
+
+    height:55px;
+
+    border:5px solid #DDD;
+
+    border-top-color:#07539C;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:1200px){
+
+    .form-grid-4{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .form-grid,
+    .form-grid-3{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .form-grid-4{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .form-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .form-buttons button{
+
+        width:100%;
+
+    }
+
+}

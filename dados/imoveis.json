@@ -1,0 +1,54 @@
+[
+    {
+        "codigo":"10001",
+        "inscricao":"000012345",
+
+        "tipoLogradouro":"Rua",
+
+        "logradouro":"José Bonifácio",
+
+        "quadra":"15",
+
+        "lote":"07",
+
+        "loteamento":"Centro",
+
+        "areaConstruida":180,
+
+        "areaTerreno":360,
+
+        "fluxoVia":"Alto",
+
+        "idadeAparente":"Nova",
+
+        "andar":2,
+
+        "pavimentos":2,
+
+        "elevador":"Não",
+
+        "topografia":"Plano",
+
+        "esquina":"Sim",
+
+        "muro":"Sim",
+
+        "distanciaPortaria":"100",
+
+        "areaLazer":"Sim",
+
+        "situacao":"Boa",
+
+        "benfeitoria":"Completa",
+
+        "distanciaKm":3.4,
+
+        "margem":"Direita",
+
+        "seguranca":"Alta",
+
+        "infraestrutura":"Completa",
+
+        "indice":1.18
+    }
+]

@@ -1,0 +1,411 @@
+/* ==========================================================
+   TABELA DE RESULTADOS
+========================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#FFFFFF;
+
+}
+
+thead{
+
+    background:#07539C;
+
+    color:#FFFFFF;
+
+}
+
+thead th{
+
+    padding:14px;
+
+    text-align:left;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+    user-select:none;
+
+}
+
+tbody td{
+
+    padding:12px 14px;
+
+    border-bottom:1px solid #E6E6E6;
+
+    font-size:14px;
+
+}
+
+tbody tr{
+
+    transition:.20s;
+
+}
+
+tbody tr:hover{
+
+    background:#F5F9FD;
+
+    cursor:pointer;
+
+}
+
+tbody tr:nth-child(even){
+
+    background:#FBFBFB;
+
+}
+
+tbody tr.selected{
+
+    background:#D9ECFF;
+
+}
+
+/* ==========================================================
+   COLUNAS
+========================================================== */
+
+.col-codigo{
+
+    width:110px;
+
+}
+
+.col-inscricao{
+
+    width:180px;
+
+}
+
+.col-tipo{
+
+    width:130px;
+
+}
+
+.col-logradouro{
+
+    width:auto;
+
+}
+
+.col-quadra{
+
+    width:90px;
+
+    text-align:center;
+
+}
+
+.col-lote{
+
+    width:90px;
+
+    text-align:center;
+
+}
+
+.col-acoes{
+
+    width:160px;
+
+    text-align:center;
+
+}
+
+/* ==========================================================
+   BOTÕES DA TABELA
+========================================================== */
+
+.table-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+}
+
+.btn-table{
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.20s;
+
+    font-size:16px;
+
+}
+
+.btn-editar{
+
+    background:#07539C;
+
+    color:#FFFFFF;
+
+}
+
+.btn-editar:hover{
+
+    background:#043D72;
+
+}
+
+.btn-visualizar{
+
+    background:#009688;
+
+    color:#FFFFFF;
+
+}
+
+.btn-visualizar:hover{
+
+    background:#00796B;
+
+}
+
+.btn-excluir{
+
+    background:#D32F2F;
+
+    color:#FFFFFF;
+
+}
+
+.btn-excluir:hover{
+
+    background:#B71C1C;
+
+}
+
+/* ==========================================================
+   ORDENAÇÃO
+========================================================== */
+
+th.sortable{
+
+    cursor:pointer;
+
+}
+
+th.sortable:hover{
+
+    background:#0A64B7;
+
+}
+
+th.sortable::after{
+
+    content:"⇅";
+
+    font-size:11px;
+
+    margin-left:6px;
+
+    opacity:.45;
+
+}
+
+th.sort-asc::after{
+
+    content:"▲";
+
+    opacity:1;
+
+}
+
+th.sort-desc::after{
+
+    content:"▼";
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   PAGINAÇÃO
+========================================================== */
+
+.pagination{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.pagination-info{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+.pagination-buttons{
+
+    display:flex;
+
+    gap:6px;
+
+}
+
+.page-button{
+
+    width:36px;
+
+    height:36px;
+
+    border:1px solid #D9D9D9;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    border-radius:6px;
+
+    transition:.20s;
+
+}
+
+.page-button:hover{
+
+    background:#07539C;
+
+    color:#FFFFFF;
+
+}
+
+.page-button.active{
+
+    background:#07539C;
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================================
+   SCROLL
+========================================================== */
+
+.table-container{
+
+    width:100%;
+
+    overflow:auto;
+
+    max-height:550px;
+
+    border:1px solid #E6E6E6;
+
+    border-radius:8px;
+
+}
+
+.table-container::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+.table-container::-webkit-scrollbar-track{
+
+    background:#F2F2F2;
+
+}
+
+.table-container::-webkit-scrollbar-thumb{
+
+    background:#B8B8B8;
+
+    border-radius:20px;
+
+}
+
+.table-container::-webkit-scrollbar-thumb:hover{
+
+    background:#07539C;
+
+}
+
+/* ==========================================================
+   ESTADO SEM DADOS
+========================================================== */
+
+.no-data{
+
+    text-align:center;
+
+    padding:60px;
+
+    color:#888;
+
+}
+
+.no-data h3{
+
+    color:#07539C;
+
+    margin-bottom:10px;
+
+}
+
+.no-data p{
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media(max-width:900px){
+
+    table{
+
+        min-width:950px;
+
+    }
+
+}

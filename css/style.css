@@ -1,0 +1,506 @@
+/* ==========================================================
+   Sistema de Cadastro de Imóveis
+   Autor: ChatGPT
+   Tema: Azul Corporativo
+========================================================== */
+
+:root{
+
+    --primary:#07539C;
+    --primary-dark:#043d72;
+
+    --background:#E5E6E6;
+
+    --white:#FFFFFF;
+
+    --border:#D5D5D5;
+
+    --text:#222;
+
+    --text-light:#666;
+
+    --success:#2E7D32;
+
+    --danger:#D32F2F;
+
+    --radius:8px;
+
+    --shadow:0 2px 10px rgba(0,0,0,.08);
+
+    --transition:.25s;
+
+}
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+/* ====================================================== */
+
+.container{
+
+    width:95%;
+
+    max-width:1600px;
+
+    margin:auto;
+
+    padding:25px;
+
+}
+
+/* ====================================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:18px 25px;
+
+    border-radius:var(--radius);
+
+    margin-bottom:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+}
+
+/* ====================================================== */
+
+.actions{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+/* ====================================================== */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    border-radius:6px;
+
+    padding:11px 20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* ====================================================== */
+
+#btnNovo{
+
+    background:#2E7D32;
+
+    color:white;
+
+}
+
+#btnNovo:hover{
+
+    background:#256628;
+
+}
+
+#btnAtualizar{
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+#btnAtualizar:hover{
+
+    background:#f2f2f2;
+
+}
+
+#btnPesquisar{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+#btnPesquisar:hover{
+
+    background:var(--primary-dark);
+
+}
+
+#btnLimpar{
+
+    background:#888;
+
+    color:white;
+
+}
+
+#btnLimpar:hover{
+
+    background:#666;
+
+}
+
+#btnCadastrar{
+
+    background:var(--success);
+
+    color:white;
+
+    margin-top:20px;
+
+}
+
+#btnCadastrar:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ====================================================== */
+
+.card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+}
+
+.card h2{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+/* ====================================================== */
+
+.grid-filtros{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.campo{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.campo-grande{
+
+    grid-column:span 2;
+
+}
+
+/* ====================================================== */
+
+label{
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+input{
+
+    height:42px;
+
+    border:1px solid var(--border);
+
+    border-radius:6px;
+
+    padding:10px 12px;
+
+    font-size:15px;
+
+    transition:var(--transition);
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 5px rgba(7,83,156,.25);
+
+}
+
+/* ====================================================== */
+
+.toolbar{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:22px;
+
+}
+
+/* ====================================================== */
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+#lblQuantidade{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+/* ====================================================== */
+
+.empty{
+
+    display:none;
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#666;
+
+}
+
+.empty h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+/* ====================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:4px 10px;
+
+    border-radius:20px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:12px;
+
+}
+
+.success{
+
+    color:var(--success);
+
+}
+
+.error{
+
+    color:var(--danger);
+
+}
+
+/* ====================================================== */
+
+.loading{
+
+    opacity:.5;
+
+    pointer-events:none;
+
+}
+
+/* ====================================================== */
+
+.fade{
+
+    animation:fade .25s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ====================================================== */
+
+@media(max-width:1200px){
+
+    .grid-filtros{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ====================================================== */
+
+@media(max-width:800px){
+
+    .grid-filtros{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .campo-grande{
+
+        grid-column:auto;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:flex-start;
+
+    }
+
+    .actions{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+}
+
+/* ====================================================== */
+
+@media(max-width:600px){
+
+    .container{
+
+        width:98%;
+
+        padding:12px;
+
+    }
+
+    .card{
+
+        padding:15px;
+
+    }
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+}
